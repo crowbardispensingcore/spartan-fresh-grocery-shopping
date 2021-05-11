@@ -1,0 +1,140 @@
+.d__product-card-container {
+    position: relative;
+    max-width: 240px;
+    padding: 0 13px;
+    margin-right: 45px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color:white;
+}
+
+.d__out-of-stock-label {
+    display: none;
+    position: absolute;
+    right: -10px;
+    top: 5px;
+    transform: rotate(30deg);
+    font-size: 15px;
+    padding: 2px 4px;
+    backdrop-filter: saturate(180%) blur(10px);
+    background-color: rgba(248, 245, 242, 0.1);
+    color: #DF2C2E;
+    border: 1.2px solid #DF2C2E;
+}
+
+.d__product-card-container > img {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    max-height: 185px;
+    object-fit: contain;
+}
+
+.d__product-title {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.d__unit-price {
+    color: rgb(94, 94, 94);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.d__item-price-wrapper {
+    padding: 15px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.d__final-price {
+    font-size: 25px;
+    margin-right: 8px;
+}
+
+.d__discount {
+    display: none;
+    font-size: 13px;
+    font-weight: lighter;
+    color: white;
+    background-color: #DF2C2E;
+    padding: 3px 6px;
+}
+
+.d__before-price {
+    display: none;
+    color: rgb(94, 94, 94);
+    margin-left: 10px;
+}
+
+.d__product-card-container > button {
+    font-size: 18px;
+    border-style: none;
+    border-radius: 3px;
+    padding: 7px 24px;
+    margin: 25px auto 15px;
+    color: white;
+    background-color: #4c7c7d;
+    border: 2px solid #4c7c7d;
+    transition-duration: .2s;
+    cursor: pointer;
+}
+
+.d__product-card-container > button:hover {
+    background-color: white;
+    color: #4c7c7d;
+}
+
+
+
+
+
+
+
+
+.detail-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.d__product-card-container {
+    flex-direction: row !important;
+}
+
+.detail-card-container {
+    max-width: 80vw !important;
+}
+
+.d__description-wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.d__product-card-container > img {
+    max-height: 500px !important;
+    padding-right: 40px;
+
+}
+
+.d__product-title {
+    font-size: 3rem !important;
+}
+
+.d__unit-price {
+    font-size: 1.8rem !important;
+    margin-top: 10px;
+}
+
+.d__product-des-wrapper {
+    margin-top: 50px;
+    padding-right: 300px;
+}
+
+.d__add-selected-container {
+    margin-top: 50px;
+    width: 700px;
+}

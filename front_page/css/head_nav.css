@@ -1,0 +1,123 @@
+header {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    backdrop-filter: saturate(180%) blur(10px);
+    background-color: rgba(248, 245, 242, 0.1);
+}
+
+.menu-bar-container {
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: brown; */
+}
+
+.menu-bar-logo-wrapper {
+    height: 100%;
+    flex: 1 1 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color:darkmagenta */
+}
+
+.menu-bar-logo {
+    width: 220px;
+    cursor: pointer;
+    /* background-color: darkgreen; */
+}
+
+.menu-bar-search-wrapper {
+    height: 100%;
+    flex: 1 1 30%;
+    display: flex;
+    align-items: center;
+    /* background-color: deepskyblue; */
+}
+
+.menu-bar-search-wrapper > form {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    /* background-color: darkgreen; */
+}
+
+.menu-bar-search-wrapper > form > button {
+    margin-left: 2px;
+    border-style: none;
+    width: 30px;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+}
+
+.menu-bar-user-wrapper {
+    height: 100%;
+    flex: 1 1 37%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* background-color: hotpink; */
+}
+
+.user-info-wrapper {
+    height: 50px;
+    width: 120px;
+    margin-right: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.2px solid transparent;
+    border-radius: 3px;
+    transition-duration: .2s;
+    cursor: pointer;
+    /* background-color:aquamarine; */
+}
+
+.user-info-wrapper:hover {
+    border: 1.2px solid #383634;
+}
+
+.menu-bar-user-icon {
+    width: 1.5rem;
+    height: auto;
+    margin-right: .7rem;
+}
+
+.menu-bar-cart-wrapper {
+    height: 100%;
+    flex: 1 1 13%;
+    display: flex;
+    align-items: center;
+    /* background-color: olive; */
+}
+
+.cart-info-wrapper {
+    height: 50px;
+    width: 130px;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.2px solid transparent;
+    border-radius: 3px;
+    transition-duration: .2s;
+    cursor: pointer;
+    /* background-color: darkseagreen; */
+}
+
+.cart-info-wrapper:hover {
+    border: 1.2px solid #383634;
+}
+
+.menu-bar-cart-icon {
+    width: 25px;
+    height: auto;
+    padding-right: .7rem;
+    /* background-color: darkgrey; */
+}

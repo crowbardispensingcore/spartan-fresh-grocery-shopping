@@ -1,0 +1,161 @@
+html {
+    background-color: #F3F1EF;
+}
+
+.main-container {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+th {
+  height: 3rem;
+}
+
+.order_summary {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 175, 175);
+  height: fit-content;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.order_summary table {
+  border-collapse: collapse;
+}
+
+.order_summary td {
+  height: 2rem;
+}
+
+.order_summary td:nth-child(2) {
+  text-align: right;
+}
+
+.cart {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 175, 175);
+  height: fit-content;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.cart table {
+  border-collapse: collapse;
+}
+
+.cart td:nth-child(1) {
+  text-align: left;
+}
+
+.cart td {
+  border-top: 1px dotted black;
+  text-align: center;
+  height: 40px;
+}
+
+.cart-table-title {
+  text-align: center;
+}
+
+.total {
+  height: 3.4rem;
+}
+
+.total td{
+  color: #B12623;
+  border-top: 1px solid black;
+}
+
+.info-select {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: #B12623; */
+}
+
+.info-select form {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-button {
+  margin: 10px auto;
+  padding: 5px 50px;
+  font-size: 120%;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #FFD814;
+  cursor: pointer;
+}
+
+.minor-select {
+  background-color: #F3F1EF !important;
+}
+
+.selection {
+  margin: 10px 0px;
+  width: auto;
+  height: auto;
+  font-size: .8rem;
+  cursor: pointer;
+  background-color: white;
+  padding: 10px;
+}
+
+.add-link {
+  font-size: .9rem;
+}
+
+.confirm-container {
+  margin: 30px auto auto auto;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.container-title {
+  align-self: center;
+}
+
+.tooltiptext {
+  font-size: .8rem;
+  color: rgb(129, 129, 129);
+}
+
+.returnButton {
+  position: relative;
+  margin-right: 50px;
+  float:right;
+  width: 150px;
+  height: 30px;
+  font-size: 80%;
+  font-weight: bold;
+  background-color: rgb(238, 238, 0);
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+
+.returnButton:hover{
+  background-color: rgb(255, 217, 50);
+  color: black;
+}

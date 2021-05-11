@@ -1,0 +1,51 @@
+html {
+  background-color: #F3F1EF;
+}
+
+h3 {
+  text-align: center;
+}
+
+.setDefault {
+  text-align: center;
+  margin: 20px auto 0px;
+  padding: 15px 0px;
+  width: 40vw;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.setDefault_form {
+  width: 50%;
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-options {
+  width: 50%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: fit-content;
+  padding: 5px 0px;
+}
+
+.form-options > label {
+  text-align: left;
+}
+
+.button {
+  margin: 15px auto 0px;
+  padding: 10px 20px;
+  background-color: #F3F1EF;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}

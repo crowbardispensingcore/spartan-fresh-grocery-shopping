@@ -1,0 +1,229 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+#cover {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    backdrop-filter: saturate(180%) blur(100px);
+    background-color: rgba(248, 245, 242, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.log-out-container {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 3px;
+    color: #E45959;
+    backdrop-filter: saturate(180%) blur(100px);
+    background-color: rgba(248, 245, 242, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.2px solid #E45959;
+    transition-duration: .2s;
+    cursor: pointer;
+}
+
+.log-out-container:hover {
+    color: rgba(255, 255, 255, 0.822);
+    border: 1.2px solid transparent;
+    background-color: rgba(228, 89, 89, 0.795);
+}
+
+.menu-bar-container {
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: saturate(180%) blur(10px);
+    background-color: rgba(248, 245, 242, 0.1);
+}
+
+.menu-bar-logo-wrapper {
+    height: 100%;
+    flex: 1 1 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-bar-logo {
+    width: 220px;
+    cursor: pointer;
+}
+
+.menu-bar-search-wrapper {
+    height: 100%;
+    flex: 1 1 30%;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar-search-wrapper > form {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.menu-bar-search-wrapper > form > button {
+    margin-left: 2px;
+    border-style: none;
+    width: 30px;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+}
+
+.menu-bar-user-wrapper {
+    height: 100%;
+    flex: 1 1 37%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.user-info-wrapper {
+    height: 50px;
+    width: 120px;
+    margin-right: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.2px solid transparent;
+    transition-duration: .2s;
+    cursor: pointer;
+}
+
+.user-info-wrapper:hover {
+    border: 1.2px solid #383634;
+}
+
+.menu-bar-user-icon {
+    width: 1.5rem;
+    height: auto;
+    margin-right: .7rem;
+}
+
+.menu-bar-cart-wrapper {
+    height: 100%;
+    flex: 1 1 13%;
+    display: flex;
+    align-items: center;
+}
+
+.cart-info-wrapper {
+    height: 50px;
+    width: 130px;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.2px solid transparent;
+    transition-duration: .2s;
+    cursor: pointer;
+}
+
+.cart-info-wrapper:hover {
+    border: 1.2px solid #383634;
+}
+
+.menu-bar-cart-icon {
+    width: 25px;
+    height: auto;
+    padding-right: .7rem;
+}
+
+.background-blur-container {
+    display: none;
+    z-index: 199;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(30px);
+    background-color: rgba(80, 80, 80, 0.1);
+    transition: 0.5s ease;
+}
+
+.login-prompt-container {
+    display: none;
+    z-index: 200;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.close-login-prompt-btn {
+    margin: 5px 5px 0px 0px;
+    font-size: 20px;
+    width: 25px;
+    height: 25px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: 0.3s ease;
+    user-select: none;
+}
+
+.close-login-prompt-btn:hover {
+    background-color: rgb(124, 124, 124);
+    color: rgb(255, 255, 255);
+}
+
+.login-prompt-btn {
+    font-size: 20px;
+    width: 160px;
+    padding: 8px 0px;
+    border: 2px solid #426869;
+    background-color: transparent;
+    color: #426869;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+.login-prompt-btn:hover {
+    background-color: #426869;
+    color: white;
+}
+
+.login-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.register-btn {
+    margin-bottom: 25px;
+}

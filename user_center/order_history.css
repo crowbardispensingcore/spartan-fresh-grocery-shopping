@@ -1,0 +1,71 @@
+html {
+  background-color: #F3F1EF;
+}
+
+h1 {
+  text-align: center;
+}
+
+.flex-container {
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.order_history {
+  width: 400px;
+  height: 500px;
+  border-radius: 5px;
+  border: 2px solid rgb(85, 85, 85);
+  padding: 0 20px;
+  margin: 10px 5px;
+  background-color: white;
+  overflow: auto;
+}
+
+.order_history table {
+  margin: 10px auto;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.order_history th {
+  font-weight: 100;
+}
+
+.order_history td {
+  border-top: 1px dotted black;
+  text-align: center;
+  height: 30px;
+}
+
+.date > td {
+  text-align: left;
+  border-top: none;
+}
+
+.status > td {
+  font-size: 1.2rem;
+  text-align: left;
+  border-top: none;
+}
+
+.total > td {
+  text-align: right;
+  border-top: none;
+  border-bottom: 1px solid black;
+  height: 25px;
+}
+
+.product-name-cell {
+  text-align: left !important;
+  width: 100%;
+}
+
+.a {
+  padding-top: 15px;
+  text-align: center;
+}

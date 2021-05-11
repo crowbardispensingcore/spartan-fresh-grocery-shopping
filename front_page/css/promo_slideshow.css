@@ -1,0 +1,49 @@
+.promo-slide-container {
+    width: 55vw;
+    min-width: 900px;
+    position: relative;
+    background-color: white;
+    margin: 0 auto 1rem;
+}
+
+.promo-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.promo-slide > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.prev-slide, .next-slide {
+    position: absolute;
+    width: 2.6rem;
+    height: 2.6rem;
+    top: calc(50% - 1.3rem);
+    color: rgb(59, 59, 59);
+    background-color: rgba(248, 245, 242, 0.849);
+    backdrop-filter: saturate(180%) blur(10px);
+    font-size: 1.3rem;
+    text-align: center;
+    border-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+.prev-slide {
+    left: .5rem;
+}
+
+.next-slide {
+    right: .5rem;
+}
+
+.prev-slide:hover, .next-slide:hover {
+    color: rgb(230, 230, 230);
+    background-color: rgb(92, 92, 92, .7);
+}

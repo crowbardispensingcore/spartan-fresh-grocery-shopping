@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link rel="stylesheet" href="css/head_nav.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/promo_slideshow.css">
+    <link rel="stylesheet" href="css/product_card.css">
+    <script src="js/promo_slide.js" defer></script>
+</head>
+<header>
+    <div class="menu-bar-container">
+        <div class="menu-bar-logo-wrapper">
+            <div class="menu-bar-logo">
+                <img src="../../resource/icon/logo.svg">
+            </div>
+        </div>
+        <div class="menu-bar-search-wrapper">
+            <form>
+                <input type="text" placeholder="Search">
+                <button type="submit">
+                    <img src="../../resource/icon/search-icon.svg">
+                </button>
+            </form>
+        </div>
+        <div class="menu-bar-user-wrapper">
+            <div class="user-info-wrapper">
+                <div class="menu-bar-user-icon">
+                    <img src="../../resource/icon/user-icon.svg">
+                </div>
+                <div class="user-name">
+                    <span>Name</span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-bar-cart-wrapper">
+            <div class="cart-info-wrapper">
+                <div class="menu-bar-cart-icon">
+                    <img src="../../resource/icon/cart-icon.svg">
+                </div>
+                <span>Cart:&nbsp;</span>
+                <span id="cart-item-count-text">5</span>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+    <div class="category-container">
+        <div class="category-card">
+            <img src="../resource/icon/category/default.png">
+            <span>fruit</span>
+        </div>
+        <div class="category-card">
+            <img src="../resource/icon/category/default.png">
+            <span>Vegetable</span>
+        </div>
+        <div class="category-card">
+            <img src="../resource/icon/category/default.png">
+            <span>protein</span>
+        </div>
+        <div class="category-card">
+            <img src="../resource/icon/category/default.png">
+            <span>dairy</span>
+        </div>
+        <div class="category-card">
+            <img src="../resource/icon/category/default.png">
+            <span>baked goods</span>
+        </div>
+        <div class="category-card">
+            <img src="../resource/icon/category/default.png">
+            <span>sweets</span>
+        </div>
+        <div class="category-card">
+            <img src="../resource/icon/category/default.png">
+            <span>sweets</span>
+        </div>
+    </div>
+
+    <div class="promo-slide-container">
+        <div class="promo-slide">
+            <img src="../resource/img/promotion/promo_1.png">
+        </div>
+        <div class="promo-slide">
+            <img src="../resource/img/promotion/promo_2.png">
+        </div>
+        <div class="promo-slide">
+            <img src="../resource/img/promotion/promo_3.png">
+        </div>
+
+        <button class="prev-slide" onclick="switchSlide(-1)">&#10094;</button>
+        <button class="next-slide" onclick="switchSlide(1)">&#10095;</button>
+    </div>
+
+
+    <div class="featued-container">
+        <div class="featued-info">
+            <div class="featued-title">
+                Deals
+            </div>
+            <button>
+                More &#10095;
+            </button>
+        </div>
+        <div class="featured-card-container">
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="featued-container">
+        <div class="featued-info">
+            <div class="featued-title">
+                Best Sellers
+            </div>
+            <button>
+                More &#10095;
+            </button>
+        </div>
+        <div class="featured-card-container">
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+            <div class="product-card-container">
+                <img src="../resource/img/large/gala_apple.png">
+                <span class="product-title">Kiwi Organic, 1 Each</span>
+                <span class="unit-price">$1.39/lb</span>
+                <div class="item-price-wrapper">
+                    <span class="final-price">$2.7</span>
+                    <div class="discount">50% Off</div>
+                    <span class="before-price"><strike>$5.4</strike></span>
+                </div>
+                <button class="add-to-cart">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
