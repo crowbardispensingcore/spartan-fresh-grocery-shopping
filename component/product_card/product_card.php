@@ -87,6 +87,11 @@ class ProductCard {
             </div>
             <button class="add-to-cart" data-id={$id}>Add</button>
         </div>
+        <div class="add-message-container">
+            <div class="add-message" id="add-message-{$id}">
+                {$product_name} has been added to your cart.
+            </div>
+        </div>
         HTML;
         echo $discount_script;
     }

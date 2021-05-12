@@ -7,10 +7,15 @@ $(document).ready(function() {
         $(this).children('form').submit();
     });
 
-
+    var btn_animation_flag = {};
     $('.add-to-cart').click(function(event) {
         event.stopPropagation();
         var product_id = $(this).data('id');
+        console.log(btn_animation_flag);
+        if (!(product_id in btn_animation_flag)) {
+            btn_animation_flag[product_id] = false;
+        }
+
         $.ajax({
             url: add_to_cart_url,
             type: 'POST',
@@ -28,6 +33,22 @@ $(document).ready(function() {
                             document.getElementById('cart-item-count-text').innerHTML = response;
                         }
                     });
+                    console.log('before' + btn_animation_flag[product_id]);
+                    if (!btn_animation_flag[product_id]) {
+                        btn_animation_flag[product_id] = true;
+                        console.log('start' + btn_animation_flag[product_id]);
+                        $('#add-message-' + product_id)
+                        .animate(
+                            { height: 'toggle', opacity: 'toggle' }, 
+                            'slow',)
+                        .delay(1000)
+                        .animate(
+                            { height: 'toggle', opacity: 'toggle' }, 
+                            'slow', function() {
+                                btn_animation_flag[product_id] = false;
+                                console.log('finish' + btn_animation_flag[product_id]);
+                            });
+                    }
                 }
                 else if (response == 'out of stock') {
                     alert('Out-of-stock');
