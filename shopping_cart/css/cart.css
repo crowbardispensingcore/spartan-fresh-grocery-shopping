@@ -58,10 +58,11 @@ html {
 
 .item-row-wrapper > .product-img-wrapper > img {
     z-index: 10;
-    width: 6vw;
-    max-width: 7rem;
-    min-width: 5rem;
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
+    background-color: white;
     box-shadow: 2px 6px 15px 0px #ccc;
     margin-left: -3rem;
     transition: .2s;
