@@ -4,24 +4,23 @@ var update_username_url = root + '/component/function/update_username.php';
 var log_out_url = root + '/component/function/log_out.php';
 
 $(document).ready(function () {
-    hideLogInPrompt();
     $('.log-out-container').click(function(){
         logOut();
     });
-    $.ajax({
-        url: update_cart_item_count_url,
-        type: 'POST',
-        success: function(response) {
-            updateItemCount(response);
-        }
-    });
-    $.ajax({
-        url: update_username_url,
-        type: 'POST',
-        success: function(response) {
-            updateUsername(response);
-        }
-    });
+    // $.ajax({
+    //     url: update_cart_item_count_url,
+    //     type: 'POST',
+    //     success: function(response) {
+    //         updateItemCount(response);
+    //     }
+    // });
+    // $.ajax({
+    //     url: update_username_url,
+    //     type: 'POST',
+    //     success: function(response) {
+    //         updateUsername(response);
+    //     }
+    // });
     $("#cover").hide();
 });
 
@@ -44,7 +43,7 @@ function updateUsername(name) {
     }
     else {
         // Show log out button
-        document.getElementById('log-out-btn').style.display = "flex";
+        document.getElementById('log-out-btn').style.display = "sticky";
         // Change user and cart buttons to actual links
         document.getElementById('username-click').onclick 
             = function() { window.location.href= location.protocol + '//' + location.host + '/user_center/user_center.php' };

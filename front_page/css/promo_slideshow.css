@@ -14,7 +14,7 @@
 }
 
 .promo-slide > img {
-    max-width: 100%;
+    width: inherit;
     height: auto;
 }
 
@@ -26,6 +26,7 @@
     color: rgb(59, 59, 59);
     background-color: rgba(248, 245, 242, 0.849);
     backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
     font-size: 1.3rem;
     text-align: center;
     border-style: none;
@@ -33,6 +34,12 @@
     cursor: pointer;
     user-select: none;
     transition: 0.6s ease;
+}
+
+@-moz-document url-prefix() {
+    .prev-slide, .next-slide {
+        background-color: #F3F1EF;
+    }
 }
 
 .prev-slide {

@@ -8,7 +8,8 @@ $stmt->execute();
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 usort($products, function ($item1, $item2) {
-    return ($item1['price'] - ($item1['price'] * $item1['discount'] / 100))  <=> ($item2['price'] - ($item2['price'] * $item2['discount'] / 100));
+    // return ($item1['price'] - ($item1['price'] * $item1['discount'] / 100))  <=> ($item2['price'] - ($item2['price'] * $item2['discount'] / 100));
+    return ($item1['stock'] <=> $item2['stock']);
 });
 
 include_once "header.php";

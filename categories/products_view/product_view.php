@@ -52,8 +52,8 @@ if (isset($_GET['product'])) {
 
     
 
-if (isset($_GET['quantity-to-add'])) {
-    $add_result = $_GET['quantity-to-add'];
+if (isset($_POST['quantity-to-add'])) {
+    $add_result = $_POST['quantity-to-add'];
     $add_result_arr = explode(" ", "$add_result ");
     $id = $add_result_arr[0];
     $quantity_to_add = $add_result_arr[1]; 
@@ -146,12 +146,12 @@ if (isset($_GET['quantity-to-add'])) {
     // Get image file
     if ($product_image != null) {
     ?>
-    <img src="<?=$product_image?>" loading="lazy">
+    <img src="<?=$product_image?>">
     <?php
     }
     else {
     ?>
-    <img src="http://localhost/resource/img/default/product_large.png" loading="lazy">
+    <img src="http://localhost/resource/img/default/product_large.png">
     <?php
     }
     // Get card title
@@ -197,7 +197,7 @@ if (isset($_GET['quantity-to-add'])) {
       <div class="d__add-selected-container">
         <div class="form-group">
           <div class="row">
-            <form id="addForm" name="add_product" action="product_view.php">
+            <form id="addForm" name="add_product" method="POST">
               <div class="col-md-5">
                 <select class="form-control" name="quantity-to-add">
                   <?php

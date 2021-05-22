@@ -1,0 +1,15 @@
+html {
+    background: url(/resource/img/login/login-background.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+body { 
+    font: 14px sans-serif; 
+}
+
+.wrapper { 
+    margin: 20vh auto;
+    width: 350px; 
+    padding: 20px;
+    background-color: transparent;
+}

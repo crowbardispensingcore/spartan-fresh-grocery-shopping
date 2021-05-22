@@ -44,7 +44,7 @@ $(document).ready(function() {
                         .delay(1000)
                         .animate(
                             { height: 'toggle', opacity: 'toggle' }, 
-                            'slow', function() {
+                            'fast', function() {
                                 btn_animation_flag[product_id] = false;
                                 console.log('finish' + btn_animation_flag[product_id]);
                             });

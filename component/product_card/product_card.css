@@ -1,5 +1,6 @@
 .product-card-container {
     position: relative;
+    min-width: 200px;
     max-width: 250px;
     padding: 0 13px;
     margin-right: 45px;
@@ -20,9 +21,16 @@
     font-size: 15px;
     padding: 2px 4px;
     backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
     background-color: rgba(248, 245, 242, 0.1);
     color: #DF2C2E;
     border: 1.2px solid #DF2C2E;
+}
+
+@-moz-document url-prefix() {
+    .out-of-stock-label {
+        background-color: #F3F1EF;
+    }
 }
 
 .product-card-container > img {
@@ -110,6 +118,13 @@
     padding: 5px 10px;
     border: 1px solid #4c7c7d;
     backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
     background-color: rgba(248, 245, 242, 0.1);
     display: none;
+}
+
+@-moz-document url-prefix() {
+    .add-message {
+        background-color: #F3F1EF;
+    }
 }

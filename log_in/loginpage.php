@@ -1,14 +1,15 @@
 <?php
-if(!isset($_SESSION))
-{
-  session_start();
-}
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true){
-    header("location: all_category_view.php");
-    //echo "already login";
-    exit;
-}
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]){
+?>
+<script>
+    alert('Please log out first to switch account.');
+    window.location.href = "/index.php";
+</script>
+<?php
+    }
 
 // Include config file
 $link = mysqli_connect("sql3.freesqldatabase.com", "sql3402886", "gn4yJmWUfg", "sql3402886");
@@ -104,11 +105,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ margin-top: 150px; margin-left: 570px; width: 350px; padding: 20px; background-color:transparent}
-    </style>
+    <link rel="stylesheet" href="./login.css">
 </head>
 <body>
     <div class="wrapper">
@@ -135,7 +134,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="../registration/Registration.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="../registration/registration.php">Sign up now</a>.</p>
         </form>
     </div>
 </body>

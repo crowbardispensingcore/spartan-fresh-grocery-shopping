@@ -11,6 +11,6 @@ function setPayment() {
 }
 
 function notLoginIn() {
-  alert("Uh-oh, you are not logined in");
+  alert("Uh-oh, you are not logged in");
   window.location = "../front_page/front_page.php";
 }

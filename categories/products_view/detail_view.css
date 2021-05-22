@@ -19,9 +19,16 @@
     font-size: 15px;
     padding: 2px 4px;
     backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
     background-color: rgba(248, 245, 242, 0.1);
     color: #DF2C2E;
     border: 1.2px solid #DF2C2E;
+}
+
+@-moz-document url-prefix() {
+    .d__out-of-stock-label {
+        background-color: #F3F1EF;
+    }
 }
 
 .d__product-card-container > img {

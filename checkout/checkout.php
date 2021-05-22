@@ -176,6 +176,10 @@
                 <td><b>-$<?php echo round($totalDiscount, 2);?></b></td>
               </tr>
               <tr>
+                <td>Total Weight:</td>
+                <td><?php echo $totalWeight;?> lbs</td>
+              </tr>
+              <tr>
                 <td>Shipping fee:
                   <div class="tooltip">
                     <span class="tooltiptext">*Apply to order over 20 lbs</span>

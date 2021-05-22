@@ -1,0 +1,172 @@
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background: #007991;
+  background: -webkit-linear-gradient(to right, #78ffd6, #007991);
+  background: linear-gradient(to right, #78ffd6, #007991);
+}
+
+.logo {
+  width: 30vw;
+  min-width: 300px;
+  display: block;
+  margin: 50px auto;
+  height: 30;
+  padding-left: 500;
+  transform: rotate(5deg);
+  padding-top: 8;
+  transition: .8s ease;
+  cursor: pointer;
+}
+
+.logo:hover{
+  transform: rotate(-10deg);
+}
+
+.logo-text {
+  margin-top: -20px;
+  width: 100vw;
+  text-align: center;
+  font-size: 1.5rem;
+  transition: 1s ease;
+  animation: 1s ease fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.registration-wrapper {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-wrapper > form {
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-input {
+  height: 1.5rem;
+  width: 15rem;
+  margin: 0px auto 15px auto;
+  border-radius: 3px;
+  border-style: none;
+
+  animation: slideIn 1s ease;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.input-2 {
+  animation-delay: .2s;
+}
+
+.input-3 {
+  animation-delay: .4s;
+}
+
+.input-4 {
+  animation-delay: .6s;
+}
+
+.input-5 {
+  animation-delay: .8s;
+}
+
+
+.sign-up-button {
+  z-index: 10;
+  margin-top: 1rem;
+  padding: 10px 30px; 
+  width: fit-content;
+  border-style: none;
+  border-radius: 5px;
+  animation: zoomOut 1s ease forwards;
+
+  background-color: #39d1d1;
+}
+
+.sign-up-button:hover{
+  color: white;
+  background-color: #047D93;
+  transition: .5s ease;
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(50);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+ 
+.tooltip {
+  position: relative;
+  margin-top: 1rem;
+  border-bottom: 2px dotted black;
+  font-size: .8rem;
+}
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 210px;
+  background-color: #006c7f;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  
+  position: absolute;
+  bottom: 125%;
+  left: 32%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left:50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  z-index: 20;
+  visibility: visible;
+  opacity: 1;
+  transition: .5s ease;
+}

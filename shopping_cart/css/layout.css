@@ -7,7 +7,14 @@ header {
     z-index: 100;
     top: 0;
     backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
     background-color: rgba(248, 245, 242, 0.1);
+}
+
+@-moz-document url-prefix() {
+    header {
+        background-color: #F3F1EF;
+    }
 }
 
 .menu-bar-container {

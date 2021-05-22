@@ -75,10 +75,6 @@ $(document).ready(function() {
         var textId = 'quantity-text-' + idToIncrement;
         var newVal = Number(document.getElementById(textId).innerHTML) + 1;
 
-        if (newVal > 99) {
-            return;
-        }
-
         var exceed_stock = false;
         $.ajax({
             url: check_stock_url,

@@ -12,7 +12,8 @@ $stmt = $pdo->prepare("SELECT * FROM product WHERE stock > 0");
 $stmt->execute();
 $best_seller_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 usort($best_seller_products, function ($item1, $item2) {
-    return ($item1['price'] - ($item1['price'] * $item1['discount'] / 100))  <=> ($item2['price'] - ($item2['price'] * $item2['discount'] / 100));
+    // return ($item1['price'] - ($item1['price'] * $item1['discount'] / 100))  <=> ($item2['price'] - ($item2['price'] * $item2['discount'] / 100));
+    return ($item1['stock'] <=> $item2['stock']);
 });
 
 // Get discounted products

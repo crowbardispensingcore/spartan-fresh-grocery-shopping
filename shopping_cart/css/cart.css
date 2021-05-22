@@ -25,6 +25,7 @@ html {
 .product-name-title-wrapper {
     display: flex !important;
     justify-content: center !important;
+    align-items: center;
 }
 
 .empty-cart-msg-row-wrapper {
@@ -47,6 +48,7 @@ html {
     height: 8rem;
     border-radius: .7rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     background-color: white;
 }
@@ -59,8 +61,10 @@ html {
 .item-row-wrapper > .product-img-wrapper > img {
     z-index: 10;
     object-fit: contain;
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
+    max-width: 100px;
+    max-height: 100px;
     border-radius: 50%;
     background-color: white;
     box-shadow: 2px 6px 15px 0px #ccc;
@@ -70,12 +74,18 @@ html {
 }
 
 .product-name-wrapper {
+    height: inherit;
     flex: 1 1 35%;
     padding-left: 0rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .product-name-wrapper > span {
-    word-break: break-all;
+    word-break: normal;
 }
 
 .product-price-wrapper {
@@ -163,14 +173,16 @@ html {
 }
 
 .main-summary-container {
-    flex: 1 1 30%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .summary-wrapper {
     position: sticky;
-    top: 10%;
-    margin-top: 1rem;
-    margin-left: 3rem;
+    top: 15%;
+    margin-top: 3rem;
     width: 20rem;
     height: 12rem;
     border-radius: .7rem;
