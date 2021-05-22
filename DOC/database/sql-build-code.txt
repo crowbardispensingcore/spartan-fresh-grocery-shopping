@@ -1,0 +1,213 @@
+-- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
+-- Table 'user'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `user`;
+		
+CREATE TABLE `user` (
+  `user_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `account_type` VARCHAR(255) NOT NULL DEFAULT 'customer',
+  `email` VARCHAR(255) NOT NULL,
+  `first_name` VARCHAR(40) NOT NULL,
+  `last_name` VARCHAR(40) NOT NULL,
+  `password_encrypted` VARCHAR(255) NOT NULL,
+  `phone` VARCHAR(50) NOT NULL,
+  `FK_payment_id` INTEGER NOT NULL DEFAULT 0,
+  `FK_address_id` INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY (`email`)
+);
+
+-- ---
+-- Table 'customer_address'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `customer_address`;
+		
+CREATE TABLE `customer_address` (
+  `address_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `FK_user_id` INTEGER NOT NULL,
+  `street` VARCHAR(255) NOT NULL,
+  `city` VARCHAR(255) NOT NULL,
+  `state` VARCHAR(50) NOT NULL,
+  `zip_code` VARCHAR(5) NOT NULL,
+  PRIMARY KEY (`address_id`)
+);
+
+-- ---
+-- Table 'customer_payment'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `customer_payment`;
+		
+CREATE TABLE `customer_payment` (
+  `payment_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `FK_customer_id` INTEGER NOT NULL,
+  `name_on_card` VARCHAR(255) NOT NULL DEFAULT 'NULL',
+  `card_number` VARCHAR(25) NOT NULL,
+  `exp_month` TINYINT NOT NULL,
+  `exp_year` SMALLINT NOT NULL,
+  `cvc_code` TINYINT NOT NULL,
+  PRIMARY KEY (`payment_id`)
+);
+
+-- ---
+-- Table 'product'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `product`;
+		
+CREATE TABLE `product` (
+  `product_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `product_name` VARCHAR(255) NOT NULL,
+  `price` DOUBLE NOT NULL DEFAULT 0,
+  `discount` INTEGER NOT NULL DEFAULT 0,
+  `unit` VARCHAR(255) NULL DEFAULT NULL,
+  `weight_per_item` DOUBLE NULL DEFAULT NULL,
+  `item_per_pack` INTEGER NULL DEFAULT NULL,
+  `shipping_weight` DOUBLE NOT NULL,
+  `description` MEDIUMTEXT NULL DEFAULT NULL,
+  `image` VARCHAR(100) NULL DEFAULT NULL,
+  `stock` INTEGER NOT NULL DEFAULT 0,
+  `FK_category_id` INTEGER NOT NULL,
+  PRIMARY KEY (`product_id`)
+);
+
+-- ---
+-- Table 'category'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `category`;
+		
+CREATE TABLE `category` (
+  `category_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `category_name` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`category_id`)
+);
+
+-- ---
+-- Table 'item_in_cart'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `item_in_cart`;
+		
+CREATE TABLE `item_in_cart` (
+  `item_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `FK_user_id` INTEGER NOT NULL,
+  `FK_product_id` INTEGER NOT NULL,
+  `quantity` INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (`item_id`)
+);
+
+-- ---
+-- Table 'customer_order'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `customer_order`;
+		
+CREATE TABLE `customer_order` (
+  `order_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `FK_user_id` INTEGER NOT NULL,
+  `order_date` DATETIME NOT NULL,
+  `order_total` DOUBLE NOT NULL DEFAULT 0,
+  `FK_status_id` INTEGER NOT NULL,
+  `order_address` VARCHAR(255) NOT NULL,
+  `order_payment` VARCHAR(255) NOT NULL,
+  `delivery_date` VARCHAR(255) NOT NULL DEFAULT 'NULL',
+  PRIMARY KEY (`order_id`)
+);
+
+-- ---
+-- Table 'shipping_status'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `shipping_status`;
+		
+CREATE TABLE `shipping_status` (
+  `status_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `status_description` MEDIUMTEXT NOT NULL,
+  PRIMARY KEY (`status_id`)
+);
+
+-- ---
+-- Table 'order_item'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `order_item`;
+		
+CREATE TABLE `order_item` (
+  `order_item_id` INTEGER NOT NULL AUTO_INCREMENT,
+  `FK_order_id` INTEGER NOT NULL,
+  `FK_product_id` INTEGER NOT NULL,
+  `quantity` INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (`order_item_id`)
+);
+
+-- ---
+-- Foreign Keys 
+-- ---
+
+ALTER TABLE `user` ADD FOREIGN KEY (FK_payment_id) REFERENCES `customer_payment` (`payment_id`);
+ALTER TABLE `user` ADD FOREIGN KEY (FK_address_id) REFERENCES `customer_address` (`address_id`);
+ALTER TABLE `customer_address` ADD FOREIGN KEY (FK_user_id) REFERENCES `user` (`user_id`);
+ALTER TABLE `customer_payment` ADD FOREIGN KEY (FK_customer_id) REFERENCES `user` (`user_id`);
+ALTER TABLE `product` ADD FOREIGN KEY (FK_category_id) REFERENCES `category` (`category_id`);
+ALTER TABLE `item_in_cart` ADD FOREIGN KEY (FK_user_id) REFERENCES `user` (`user_id`);
+ALTER TABLE `item_in_cart` ADD FOREIGN KEY (FK_product_id) REFERENCES `product` (`product_id`);
+ALTER TABLE `customer_order` ADD FOREIGN KEY (FK_user_id) REFERENCES `user` (`user_id`);
+ALTER TABLE `customer_order` ADD FOREIGN KEY (FK_status_id) REFERENCES `shipping_status` (`status_id`);
+ALTER TABLE `order_item` ADD FOREIGN KEY (FK_order_id) REFERENCES `customer_order` (`order_id`);
+ALTER TABLE `order_item` ADD FOREIGN KEY (FK_product_id) REFERENCES `product` (`product_id`);
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE `user` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `customer_address` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `customer_payment` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `product` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `category` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `item_in_cart` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `customer_order` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `shipping_status` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `order_item` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO `user` (`user_id`,`account_type`,`email`,`first_name`,`last_name`,`password_encrypted`,`phone`,`FK_payment_id`,`FK_address_id`) VALUES
+-- ('','','','','','','','','');
+-- INSERT INTO `customer_address` (`address_id`,`FK_user_id`,`street`,`city`,`state`,`zip_code`) VALUES
+-- ('','','','','','');
+-- INSERT INTO `customer_payment` (`payment_id`,`FK_customer_id`,`name_on_card`,`card_number`,`exp_month`,`exp_year`,`cvc_code`) VALUES
+-- ('','','','','','','');
+-- INSERT INTO `product` (`product_id`,`product_name`,`price`,`discount`,`unit`,`weight_per_item`,`item_per_pack`,`shipping_weight`,`description`,`image`,`stock`,`FK_category_id`) VALUES
+-- ('','','','','','','','','','','','');
+-- INSERT INTO `category` (`category_id`,`category_name`) VALUES
+-- ('','');
+-- INSERT INTO `item_in_cart` (`item_id`,`FK_user_id`,`FK_product_id`,`quantity`) VALUES
+-- ('','','','');
+-- INSERT INTO `customer_order` (`order_id`,`FK_user_id`,`order_date`,`order_total`,`FK_status_id`,`order_address`,`order_payment`,`delivery_date`) VALUES
+-- ('','','','','','','','');
+-- INSERT INTO `shipping_status` (`status_id`,`status_description`) VALUES
+-- ('','');
+-- INSERT INTO `order_item` (`order_item_id`,`FK_order_id`,`FK_product_id`,`quantity`) VALUES
+-- ('','','','');
